@@ -25,6 +25,13 @@ public class AppService extends IntentService {
                 break;
             }
         }
+
+        // uncomment the following code to slow down the running of the service
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         openApp(this, "com.mac.apprestartroutine");
         this.stopSelf();
         android.os.Process.killProcess(android.os.Process.myPid());
